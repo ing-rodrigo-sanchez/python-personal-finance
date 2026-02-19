@@ -1,47 +1,50 @@
-name = input("Ingrese su nombre: ")
-print(f"Bienvenido/a {name} a tu app de mejora de finanzas personales")
+name = input("Enter your name: ")
+print(f"Welcome {name} to your personal finance improvement app")
 
 while True:
     try:
-        casos = int(input("Ingrese su numero de gastos: "))
+        cases = int(input("Enter the number of expenses: "))
         break
     except ValueError:
-        print("Ingrese solo números, refieriendose a su cantidad total de gastos")
-monto = 0
+        print("Please enter numbers only")
 
-for _ in range(casos):
+amount = 0
+
+for _ in range(cases):
     while True:
         try:
-            valor = float(input("Ingrese el valor del gasto: $"))
+            worth = float(input("Enter the expense amount: $"))
             break
         except ValueError:
-            print("Ingrese solo números, refieriendose al valor de cada gasto")
-    monto += valor
+            print("Please enter numbers only")
 
-print(f"Gastos totales menusales: ${monto:.1f}")
+    amount += worth
+
+print(f"Total monthly expenses: ${amount:.1f}")
 
 while True:
     try:
-        salario = float(input("Ingrese su salario liquido mensual: $"))
+        salary = float(input("Enter your net monthly salary: $"))
         break
     except ValueError:
-        print("Ingrese solo números, refiriendose a su salario liquido mensual")
+        print("Please enter numbers only")
 
-dinero_total = salario - monto
-porcentaje_gastos = (monto / salario) * 100
+total = salary - amount
+print(f"After paying expenses you have: ${total:.1f}")
 
-print(f"Luego de pagar los gasos te quedan: ${dinero_total}")
-print(f"El porcentaje de tu salario destinado a gastos es de: %{porcentaje_gastos:.1f}")
+if salary != 0:
+    percentage = (amount / salary) * 100
+    print(f"The percentage of your salary allocated to expenses is: {percentage:.1f}%")
 
-if porcentaje_gastos <= 50:
-    print("😁 Excelente control de gastos")
-elif porcentaje_gastos > 50 and porcentaje_gastos <= 80:
-    print("🥶 De ser posible, elimina algun gasto innecesario")
-else:
-    print("👹 Cuidado, riesgo financiero alto")
+    if percentage <= 50:
+        print("Excellent expense control 😁")
+    elif percentage <= 80:
+        print("If possible, eliminate unnecessary expenses 🥶")
+    else:
+        print("Caution: high financial risk 👹")
 
-ahorro_recomendado = salario * 0.2
-print(f"Su ahorro recomendado mensual es de: ${ahorro_recomendado:.1f}")
-print(f"El monto de su ahorro luego de un año seria de: {ahorro_recomendado * 12:.1f}")
+saving = salary * 0.2
+print(f"Your recommended monthly savings is: ${saving:.1f}")
+print(f"The amount of your savings after one year would be: ${saving * 12:.1f}")
 
-print(f"Muchas gracias {name} por utilizar la app ;)")
+print(f"Thank you {name} for using the application 😁")
