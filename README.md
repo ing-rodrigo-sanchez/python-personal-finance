@@ -1,16 +1,16 @@
-# 💰 Finanzas Personales CLI
+# Personal Finance CLI (Python)
 
-Aplicación de consola en **Python** para calcular los gastos mensuales y estimar qué tan bien el porcentaje del sueldo está destinado a gastos. 
+This is a simple command-line application built using Python.
 
-## Características
-* **Análisis de gastos:** Calcula el total de tus consumos.
-* **Evaluación de presupuesto:** Determina el porcentaje de sueldo utilizado en gastos.
-* **Sugerencia de ahorro:** Ofrece una meta mensual y su proyección a 12 meses.
+## Features
 
-## 🚀 Cómo usar
-1. Descarga el archivo `Finanzas-personales.py`.
-2. Ejecútalo en tu terminal favorita.
-3. Sigue las instrucciones en pantalla.
+- Input monthly income
+- Input monthly expenses
+- Calculate remaining balance
+- Calculate savings percentage
 
----
-*Proyecto creado por Rodrigo Sánchez Vargas.*
+## Technologies
+
+- Python 3
+
+This project was created as part of my learning journey in software development.
