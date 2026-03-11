@@ -1,5 +1,12 @@
 def money():
-    return f"---------------------\nSalary:         {salary}\nExpenses:       {amount}\nMoney in favor: {total}\n---------------------"
+    return (
+        "---------------------------------\n"
+        f"Salary:                    ${salary}\n"
+        f"Expenses:                  ${amount}\n"
+        f"Money in favor:            ${total}\n"
+        f"percentage of salary used: {percentage:.1f}%\n"
+        "---------------------------------"
+    )
 
 
 while True:
@@ -25,5 +32,6 @@ while True:
     amount += worth
 
 total = salary - amount
+percentage = (amount / salary) * 100
 
 print(money())
