@@ -1,50 +1,29 @@
-name = input("Enter your name: ")
-print(f"Welcome {name} to your personal finance improvement app")
+def money():
+    return f"---------------------\nSalary:         {salary}\nExpenses:       {amount}\nMoney in favor: {total}\n---------------------"
+
 
 while True:
     try:
-        cases = int(input("Enter the number of expenses: "))
-        break
+        salary = int(input("Enter your monthly net salary: $"))
+        if salary >= 0:
+            break
+
     except ValueError:
         print("Please enter numbers only")
 
 amount = 0
 
-for _ in range(cases):
-    while True:
-        try:
-            worth = float(input("Enter the expense amount: $"))
-            break
-        except ValueError:
-            print("Please enter numbers only")
-
-    amount += worth
-
-print(f"Total monthly expenses: ${amount:.1f}")
-
 while True:
     try:
-        salary = float(input("Enter your net monthly salary: $"))
-        break
+        worth = int(input("Enter the expense (When finished, enter: 0): $"))
+        if worth == 0:
+            break
+
     except ValueError:
         print("Please enter numbers only")
 
+    amount += worth
+
 total = salary - amount
-print(f"After paying expenses you have: ${total:.1f}")
 
-if salary != 0:
-    percentage = (amount / salary) * 100
-    print(f"The percentage of your salary allocated to expenses is: {percentage:.1f}%")
-
-    if percentage <= 50:
-        print("Excellent expense control 😁")
-    elif percentage <= 80:
-        print("If possible, eliminate unnecessary expenses 🥶")
-    else:
-        print("Caution: high financial risk 👹")
-
-saving = salary * 0.2
-print(f"Your recommended monthly savings is: ${saving:.1f}")
-print(f"The amount of your savings after one year would be: ${saving * 12:.1f}")
-
-print(f"Thank you {name} for using the application 😁")
+print(money())
